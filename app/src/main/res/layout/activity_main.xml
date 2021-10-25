@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="5sp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:elevation="1sp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="0sp"
+            android:layout_weight="0.5"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_search"
+            android:background="@android:color/transparent"
+            android:contentDescription="search" />
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="50sp"
+            android:layout_weight="2"
+            android:textSize="40sp"
+            android:textAlignment="center"
+            android:textColor="@color/cornflowerblue"
+            android:fontFamily="@font/monsieur_la_doulaise"
+            android:text="The Swastika"
+            android:gravity="center_horizontal" />
+
+        <ImageButton
+            android:layout_width="0sp"
+            android:layout_weight="0.5"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_shopping_bag"
+            android:background="@android:color/transparent"
+            android:contentDescription="shopping bag" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Women's Section"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/darkslategray"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/image_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="220sp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="15sp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="5sp"
+                    app:sliderIndicatorRadius="2sp"
+                    app:sliderIndicatorSelectedColor="@color/cornflowerblue"
+                    app:sliderIndicatorUnselectedColor="@color/darkslategray"
+                    app:sliderScrollTimeInSec="2"
+                    app:sliderStartAutoCycle="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp">
+                    <TextView
+                        android:layout_marginLeft="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOP PICKS"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/esteban"
+                        android:textSize="20sp"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="2.5dp"
+                        android:background="@color/royalblue"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginLeft="10dp"
+                        />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/hor_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp">
+                    <TextView
+                        android:layout_marginLeft="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CATEGORIES"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/esteban"
+                        android:textSize="20sp"/>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="2.5dp"
+                        android:background="@color/royalblue"
+                        android:layout_marginTop="15sp"
+                        android:layout_marginLeft="10dp"
+                        />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
